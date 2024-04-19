@@ -2,9 +2,9 @@
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("chuj");
-		System.out.println("chujsds");
+		 Gra gra = new Gra();
+	        gra.rozpocznij();
+	    }
 	}
 
-}
+
