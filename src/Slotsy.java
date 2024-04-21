@@ -16,7 +16,7 @@ public class Slotsy {
             odpowiedz = scanner.nextLine();
 
             if (odpowiedz.equalsIgnoreCase("nie")) {
-                break; // nie dziala wyjscie z petli [powrot do menu]
+                break; // Wyjście z pętli do-while
             } else if (!odpowiedz.equalsIgnoreCase("tak")) {
                 System.out.println("Nieprawidłowa odpowiedź. Proszę wpisać 'tak' lub 'nie'.");
             }
