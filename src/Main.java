@@ -5,6 +5,7 @@ public class Main {
 
 
 		 Gra.rozpocznij();
+//		 test
 	}
 }
 	
