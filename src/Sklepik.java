@@ -3,6 +3,11 @@
 import java.util.Scanner;
 
 public class Sklepik {
+	private static Monety monety;
+	public void Postac(int poczatkoweMonety) {
+        this.monety = new Monety(poczatkoweMonety);
+    }
+	
 	public static void Sklep(Postac gracz) {
         Scanner scanner = new Scanner(System.in);
 
@@ -18,7 +23,8 @@ public class Sklepik {
         System.out.println("4. Topór - 50 monet");
 
         System.out.println("Ile monet masz do wydania?");
-        int dostepneMonety = scanner.nextInt();
+        int dostepneMonety = monety.getIlosc();
+        System.out.println("Dostępne monety: "+ monety);
 
         System.out.println("Wybierz numer broni, którą chcesz kupić (1-4), lub 0 aby zakończyć zakupy:");
         int wybor = scanner.nextInt();
@@ -27,15 +33,19 @@ public class Sklepik {
             switch (wybor) {
                 case 1:
                     kupBron("Glock", 110, dostepneMonety);
+                    gracz.odejmijMonety(110);
                     break;
                 case 2:
                     kupBron("Karabin", 200, dostepneMonety);
+                    gracz.odejmijMonety(200);
                     break;
                 case 3:
                     kupBron("Maczeta", 45, dostepneMonety);
+                    gracz.odejmijMonety(45);
                     break;
                 case 4:
                     kupBron("Topór", 50, dostepneMonety);
+                    gracz.odejmijMonety(50);
                     break;
                 default:
                     System.out.println("Niepoprawny numer broni. Wybierz ponownie.");
