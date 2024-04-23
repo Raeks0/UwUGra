@@ -48,9 +48,10 @@ public class Barman {
         String drink = drinki[index];
         System.out.println("Proponuję Ci drinka: " + drink);
         iloscWypitychDrinkow++;
+        System.out.println(iloscWypitychDrinkow + " drink");
     }
     public static void wykonajMisje(Random random) {
-        String[] misje = {"Znajdź zaginionego psa w parku", "Dostarcz paczkę do pobliskiego sklepu", "Pomóż zorganizować imprezę w barze"};
+        String[] misje = {"Znajdz i porwij dziecko", "Zabij pierwszą napotkaną osobę po wyjściu z baru", "Wypij 10 drinków"};
         int index = random.nextInt(misje.length);
         String misja = misje[index];
         System.out.println("Proponuję Ci dodatkową misję: " + misja);
