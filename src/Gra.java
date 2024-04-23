@@ -1,8 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-import gra.Barman;
-
 public class Gra {
     private static Postac gracz = new Postac("Gracz1", 100);
 
