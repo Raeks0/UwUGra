@@ -1,6 +1,8 @@
 import java.util.Random;
 import java.util.Scanner;
 
+import gra.Barman;
+
 public class Gra {
     private static Postac gracz = new Postac("Gracz1", 100);
 
@@ -20,7 +22,7 @@ public class Gra {
 
             switch (wybor) {
                 case 1:
-                    System.out.println("Podchodzisz do barmana i cos se gadacie");
+                    Barman.RozmowaZBarmanem(gracz);
                     break;
                 case 2:
                     Slotsy.graNaAutomacie(gracz);

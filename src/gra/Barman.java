@@ -7,7 +7,7 @@ public class Barman {
 
     private static int iloscWypitychDrinkow = 0;
 
-    public static void main(String[] args) {
+    public static void RozmowaZBarmanem(Postac gracz) {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
 
