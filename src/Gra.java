@@ -1,8 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-import gra.Barman;
-
 public class Gra {
     private static Postac gracz = new Postac("Gracz1", 100);
 
@@ -43,7 +41,7 @@ public class Gra {
                             System.out.println("Poszliście do lasu.");
                             break;
                         case 3:
-                        	Sklepik.Sklep(gracz); // tutaj bedzie ze wchodzisz se do sklepu noramlnie i masz ze ziutek mowi elo mam takie bronei na sprzedarz i mozesz se je kupic 
+                        	Sklepik.Sklep(gracz);
                             break;
                         case 4:
                             if (losujSzansę(25)) { // Losowanie szansy 25%
