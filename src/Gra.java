@@ -43,7 +43,7 @@ public class Gra {
                             System.out.println("Poszliście do lasu.");
                             break;
                         case 3:
-                        	Sklep.Sklepik(); // tutaj bedzie ze wchodzisz se do sklepu noramlnie i masz ze ziutek mowi elo mam takie bronei na sprzedarz i mozesz se je kupic 
+                        	Sklepik.Sklep(gracz); // tutaj bedzie ze wchodzisz se do sklepu noramlnie i masz ze ziutek mowi elo mam takie bronei na sprzedarz i mozesz se je kupic 
                             break;
                         case 4:
                             if (losujSzansę(25)) { // Losowanie szansy 25%
