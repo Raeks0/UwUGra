@@ -5,14 +5,20 @@ public class Postac {
     private String imie;
     private Monety monety;
     private List<IloscMonet> obserwatorzy = new ArrayList<>();
+    private HP hp;
 
     public Postac(String imie, int poczatkoweMonety) {
         this.imie = imie;
         this.monety = new Monety(poczatkoweMonety);
+        this.hp = new HP();
     }
 
     public Monety getMonety() {
         return monety;
+    }
+
+    public HP getHP() {
+        return hp;
     }
 
     public void dodajMonety(int ilosc) {
