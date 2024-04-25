@@ -2,7 +2,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Gra {
-    private static Postac gracz = new Postac("Gracz1", 100, 100);
+    private static final Jednostka Boss = null;
+	private static Postac gracz = new Postac("Gracz1", 100, 100);
     private static Ekwipunek ekwipunek = new Ekwipunek(); // Dodajemy obiekt klasy Equipment
 
     
@@ -42,8 +43,14 @@ public class Gra {
                             System.out.println("Rozejrzeliście się po mieście.");
                             break;
                         case 2:
-                            System.out.println("Poszliście do lasu.");
+                            System.out.println("Poszli do lasu Poszli");
+                            System.out.println("Po ziemi przebiegłą mysza i potem ...");
+                            
+                            System.out.println("Spotkaliśta GOBLINA Krzysia");
+                            Walka walka = new Walka(gracz, Boss);
+                            Walka.rozpocznijWalke();
                             break;
+
                         case 3:
                         	Sklepik.Sklep(gracz, ekwipunek); // tutaj bedzie ze wchodzisz se do sklepu noramlnie i masz ze ziutek mowi elo mam takie bronei na sprzedarz i mozesz se je kupic 
                             break;

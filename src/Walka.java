@@ -1,9 +1,9 @@
 import java.util.Random;
 
 public class Walka {
-    private Jednostka gracz;
-    private Jednostka przeciwnik;
-    private Random random;
+    private static Jednostka gracz;
+    private static Jednostka przeciwnik;
+    private static Random random;
 
     public Walka(Jednostka gracz, Jednostka przeciwnik) {
         this.gracz = gracz;
@@ -11,7 +11,7 @@ public class Walka {
         this.random = new Random();
     }
 
-    public void rozpocznijWalke() {
+    public static void rozpocznijWalke() {
         System.out.println("Rozpoczyna się walka!");
         while (gracz.czyZyje() && przeciwnik.czyZyje()) {
             wykonajRunde();
@@ -19,7 +19,7 @@ public class Walka {
         zakonczWalke();
     }
 
-    private void wykonajRunde() {
+    private static void wykonajRunde() {
         if (czyUnik(gracz.getSzczescie())) {
             System.out.println("Gracz unika ataku przeciwnika!");
         } else {
@@ -48,12 +48,12 @@ public class Walka {
         System.out.println();
     }
 
-    private boolean czyUnik(int szczescie) {
+    private static boolean czyUnik(int szczescie) {
         int losowaLiczba = random.nextInt(100) + 1; // losowa liczba od 1 do 100
         return losowaLiczba <= szczescie;
     }
 
-    private void zakonczWalke() {
+    private static void zakonczWalke() {
         if (gracz.czyZyje()) {
             System.out.println("Gracz zwycięża!");
         } else {
