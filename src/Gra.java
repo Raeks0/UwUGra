@@ -2,7 +2,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Gra {
-    private static Postac gracz = new Postac("Gracz1", 100);
+    private static Postac gracz = new Postac("Gracz1", 100, 100);
     private static Ekwipunek ekwipunek = new Ekwipunek(); // Dodajemy obiekt klasy Equipment
 
     

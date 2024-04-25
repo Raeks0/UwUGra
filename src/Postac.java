@@ -1,24 +1,17 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Postac {
-    private String imie;
+public class Postac extends Jednostka implements IloscMonet {
     private Monety monety;
     private List<IloscMonet> obserwatorzy = new ArrayList<>();
-    private HP hp;
 
-    public Postac(String imie, int poczatkoweMonety) {
-        this.imie = imie;
+    public Postac(String imie, int poczatkoweMonety, int punktyZycia) {
+        super(imie, punktyZycia);
         this.monety = new Monety(poczatkoweMonety);
-        this.hp = new HP();
     }
 
     public Monety getMonety() {
         return monety;
-    }
-
-    public HP getHP() {
-        return hp;
     }
 
     public void dodajMonety(int ilosc) {
@@ -40,5 +33,28 @@ public class Postac {
         for (IloscMonet obserwator : obserwatorzy) {
             obserwator.aktualizujIloscMonet(iloscMonet);
         }
+    }
+
+    @Override
+    public int getPunktAtaku() {
+		return 0;
+        // Implementacja zwracająca punkt ataku postaci
+    }
+
+    @Override
+    public int getPunktObrony() {
+		return 0;
+        // Implementacja zwracająca punkt obrony postaci
+    }
+
+    @Override
+    public int getSzczescie() {
+		return 0;
+        // Implementacja zwracająca szczęście postaci
+    }
+
+    @Override
+    public void aktualizujIloscMonet(int iloscMonet) {
+        // Implementacja aktualizacji ilości monet
     }
 }
