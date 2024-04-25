@@ -1,9 +1,7 @@
-package gra;
-
 import java.util.Scanner;
 
 public class Sklepik {
-	public static void Sklep(Postac gracz) {
+    public static void Sklep(Postac gracz, Ekwipunek ekwipunek) {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Witaj w sklepie z bronią!");
@@ -26,16 +24,16 @@ public class Sklepik {
         while (wybor != 0) {
             switch (wybor) {
                 case 1:
-                    kupBron("Glock", 110, dostepneMonety);
+                    ekwipunek.dodajPrzedmiot("Glock", 110, gracz);
                     break;
                 case 2:
-                    kupBron("Karabin", 200, dostepneMonety);
+                    ekwipunek.dodajPrzedmiot("Karabin", 200, gracz);
                     break;
                 case 3:
-                    kupBron("Maczeta", 45, dostepneMonety);
+                    ekwipunek.dodajPrzedmiot("Maczeta", 45, gracz);
                     break;
                 case 4:
-                    kupBron("Topór", 50, dostepneMonety);
+                    ekwipunek.dodajPrzedmiot("Topór", 50, gracz);
                     break;
                 default:
                     System.out.println("Niepoprawny numer broni. Wybierz ponownie.");
@@ -45,16 +43,8 @@ public class Sklepik {
             wybor = scanner.nextInt();
         }
 
-        System.out.println("Dziękujemy za zakupy w sklepie z bronią!");
-    }
+        ekwipunek.wyswietlEkwipunek();
 
-    public static void kupBron(String nazwa, int cena, int dostepneMonety) {
-        if (dostepneMonety >= cena) {
-            System.out.println("Kupiłeś " + nazwa + " za " + cena + " monet.");
-            dostepneMonety -= cena;
-            System.out.println("Pozostało Ci " + dostepneMonety + " monet.");
-        } else {
-            System.out.println("Nie masz wystarczającej ilości monet, aby kupić " + nazwa + ".");
-        }
+        System.out.println("Dziękujemy za zakupy w sklepie z bronią!");
     }
 }

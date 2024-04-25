@@ -1,11 +1,11 @@
 import java.util.Random;
 import java.util.Scanner;
 
-import gra.Barman;
-
 public class Gra {
     private static Postac gracz = new Postac("Gracz1", 100);
+    private static Ekwipunek ekwipunek = new Ekwipunek(); // Dodajemy obiekt klasy Equipment
 
+    
     public static void rozpocznij() {
         Scanner scanner = new Scanner(System.in);
         boolean kontynuuj = true;
@@ -15,8 +15,9 @@ public class Gra {
             System.out.println("1. Porozmawiaj z barmanem");
             System.out.println("2. Spróbuj szczęścia na maszynie hazardowej");
             System.out.println("3. Wyjdź z baru");
-            System.out.println("4. Wyjdź z gry");
-
+            System.out.println("4. Wyświetl ekwipunek");
+            System.out.println("5. Wyjdź z gry");
+            
             int wybor = scanner.nextInt();
             scanner.nextLine(); 
 
@@ -32,7 +33,8 @@ public class Gra {
                     System.out.println("1. Rozejrzyj się po mieście");
                     System.out.println("2. Idź do lasu");
                     System.out.println("3. Idź do sklepu z bronią");
-                    System.out.println("4. Zaczynaj żebrać");
+                    System.out.println("4. Wyświetl ekwipunek ");
+                    System.out.println("5. Zaczynaj żebrać");
                     int wyborPoWyjsciu = scanner.nextInt();
                     scanner.nextLine();
                     switch (wyborPoWyjsciu) {
@@ -43,9 +45,13 @@ public class Gra {
                             System.out.println("Poszliście do lasu.");
                             break;
                         case 3:
-                        	Sklepik.Sklep(gracz); // tutaj bedzie ze wchodzisz se do sklepu noramlnie i masz ze ziutek mowi elo mam takie bronei na sprzedarz i mozesz se je kupic 
+                        	Sklepik.Sklep(gracz, ekwipunek); // tutaj bedzie ze wchodzisz se do sklepu noramlnie i masz ze ziutek mowi elo mam takie bronei na sprzedarz i mozesz se je kupic 
                             break;
-                        case 4:
+                        case 4: 
+                        	System.out.println("Ekwipunek gracza:");
+                            ekwipunek.wyswietlEkwipunek(); // Wywołujemy metodę z obiektu klasy Ekwipunek
+                            break;
+                        case 5:
                             if (losujSzansę(25)) { // Losowanie szansy 25%
                                 gracz.dodajMonety(20); // Dodanie 20 monet
                                 System.out.println("Dostajesz 20 monet!");
@@ -59,7 +65,11 @@ public class Gra {
                     }
                     break;
                 case 4:
-                    kontynuuj = false;
+                	System.out.println("Ekwipunek gracza:");
+                    ekwipunek.wyswietlEkwipunek(); // Wywołujemy metodę z obiektu klasy Ekwipunek
+                    break;
+                case 5:
+                	kontynuuj = false;
                     break;
                 default:
                     System.out.println("Nieprawidłowy wybór.");
