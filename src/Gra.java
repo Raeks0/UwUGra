@@ -45,7 +45,11 @@ public class Gra {
                             System.out.println("Poszliście do lasu.");
                             break;
                         case 3:
+<<<<<<< HEAD
                         	Sklepik.Sklep(gracz, ekwipunek); // tutaj bedzie ze wchodzisz se do sklepu noramlnie i masz ze ziutek mowi elo mam takie bronei na sprzedarz i mozesz se je kupic 
+=======
+                        	Sklepik.Sklep(gracz);
+>>>>>>> d03931439fe824498ae18ab01993701e270fc9cd
                             break;
                         case 4: 
                         	System.out.println("Ekwipunek gracza:");
