@@ -15,9 +15,6 @@ public class Sklepik {
         System.out.println("3. Maczeta - 45 monet");
         System.out.println("4. Topór - 50 monet");
 
-        System.out.println("Ile monet masz do wydania?");
-        int dostepneMonety = scanner.nextInt();
-
         System.out.println("Wybierz numer broni, którą chcesz kupić (1-4), lub 0 aby zakończyć zakupy:");
         int wybor = scanner.nextInt();
 

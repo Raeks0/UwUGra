@@ -45,11 +45,13 @@ public class Gra {
                         case 2:
                             System.out.println("Poszli do lasu Poszli");
                             System.out.println("Po ziemi przebiegłą mysza i potem ...");
-                            
-                            System.out.println("Spotkaliśta GOBLINA Krzysia");
-                            Walka walka = new Walka(gracz, Boss);
-                            Walka.rozpocznijWalke();
+
+                            System.out.println("Spotkaliście GOBLINA Krzysia");
+                            Boss goblinKrzysio = new Boss("Goblin Krzysio", 100, 20, 10, 20); // Tworzenie obiektu Boss
+                            Walka walkaZGoblinem = new Walka(gracz, goblinKrzysio); // Przekazanie gracza i bossa do obiektu Walka
+                            walkaZGoblinem.rozpocznijWalke(); // Rozpoczęcie walki
                             break;
+
 
                         case 3:
                         	Sklepik.Sklep(gracz, ekwipunek); // tutaj bedzie ze wchodzisz se do sklepu noramlnie i masz ze ziutek mowi elo mam takie bronei na sprzedarz i mozesz se je kupic 
