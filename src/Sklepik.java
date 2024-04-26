@@ -22,15 +22,19 @@ public class Sklepik {
             switch (wybor) {
                 case 1:
                     ekwipunek.dodajPrzedmiot("Glock", 110, gracz);
+                    gracz.dodajBron(new Bronie("Glock", 10)); // Dodaj broń do postaci
                     break;
                 case 2:
                     ekwipunek.dodajPrzedmiot("Karabin", 200, gracz);
+                    gracz.dodajBron(new Bronie("Karabin", 20)); // Dodaj broń do postaci
                     break;
                 case 3:
                     ekwipunek.dodajPrzedmiot("Maczeta", 45, gracz);
+                    gracz.dodajBron(new Miecz("Maczeta")); // Dodaj broń do postaci
                     break;
                 case 4:
                     ekwipunek.dodajPrzedmiot("Topór", 50, gracz);
+                    gracz.dodajBron(new Topor("Topór")); // Dodaj broń do postaci
                     break;
                 default:
                     System.out.println("Niepoprawny numer broni. Wybierz ponownie.");

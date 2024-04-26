@@ -18,7 +18,8 @@ public abstract class Jednostka {
     public HP getHP() {
         return hp;
     }
-
+    public abstract void atakuj(Jednostka przeciwnik);
+    
     public boolean czyZyje() {
         return hp.czyJestZywy();
     }

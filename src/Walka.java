@@ -6,12 +6,12 @@ public class Walka {
     private static Random random;
 
     public Walka(Jednostka gracz, Jednostka przeciwnik) {
-        this.gracz = gracz;
-        this.przeciwnik = przeciwnik;
-        this.random = new Random();
+        Walka.gracz = gracz;
+        Walka.przeciwnik = przeciwnik;
+        Walka.random = new Random();
     }
 
-    public static void rozpocznijWalke() {
+    public void rozpocznijWalke() {
         System.out.println("Rozpoczyna się walka!");
         while (gracz.czyZyje() && przeciwnik.czyZyje()) {
             wykonajRunde();
@@ -20,38 +20,29 @@ public class Walka {
     }
 
     private static void wykonajRunde() {
-        if (czyUnik(gracz.getSzczescie())) {
-            System.out.println("Gracz unika ataku przeciwnika!");
+        if (gracz instanceof Boss) {
+            ((Boss) gracz).atakuj(przeciwnik);
         } else {
-            int obrazeniaGracza = gracz.getPunktAtaku() - przeciwnik.getPunktObrony();
-            if (obrazeniaGracza > 0) {
-                przeciwnik.odejmijPunktyZycia(obrazeniaGracza);
-                System.out.println("Gracz zadaje " + obrazeniaGracza + " obrażeń przeciwnikowi.");
-            } else {
-                System.out.println("Gracz nie zadaje obrażeń przeciwnikowi.");
-            }
+            gracz.atakuj(przeciwnik);
         }
 
-        if (czyUnik(przeciwnik.getSzczescie())) {
-            System.out.println("Przeciwnik unika ataku gracza!");
-        } else {
-            int obrazeniaPrzeciwnika = przeciwnik.getPunktAtaku() - gracz.getPunktObrony();
-            if (obrazeniaPrzeciwnika > 0) {
-                gracz.odejmijPunktyZycia(obrazeniaPrzeciwnika);
-                System.out.println("Przeciwnik zadaje " + obrazeniaPrzeciwnika + " obrażeń graczowi.");
-            } else {
-                System.out.println("Przeciwnik nie zadaje obrażeń graczowi.");
-            }
+        try {
+            Thread.sleep(3000); // Opóźnienie o 3 sekundy
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
+
+        if (przeciwnik instanceof Boss) {
+            ((Boss) przeciwnik).atakuj(gracz);
+        } else {
+            przeciwnik.atakuj(gracz);
+        }
+
         System.out.println("Punkty życia gracza: " + gracz.getHP().pobierzAktualnePunktyZycia());
         System.out.println("Punkty życia przeciwnika: " + przeciwnik.getHP().pobierzAktualnePunktyZycia());
         System.out.println();
     }
 
-    private static boolean czyUnik(int szczescie) {
-        int losowaLiczba = random.nextInt(100) + 1; // losowa liczba od 1 do 100
-        return losowaLiczba <= szczescie;
-    }
 
     private static void zakonczWalke() {
         if (gracz.czyZyje()) {

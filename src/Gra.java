@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Gra {
     private static final Jednostka Boss = null;
-	private static Postac gracz = new Postac("Gracz1", 100, 100);
+	private static Postac gracz = new Postac("Gracz1", 1000, 100);
     private static Ekwipunek ekwipunek = new Ekwipunek(); // Dodajemy obiekt klasy Equipment
 
     
@@ -45,11 +45,17 @@ public class Gra {
                         case 2:
                             System.out.println("Poszli do lasu Poszli");
                             System.out.println("Po ziemi przebiegłą mysza i potem ...");
-
                             System.out.println("Spotkaliście GOBLINA Krzysia");
-                            Boss goblinKrzysio = new Boss("Goblin Krzysio", 100, 20, 10, 20); // Tworzenie obiektu Boss
-                            Walka walkaZGoblinem = new Walka(gracz, goblinKrzysio); // Przekazanie gracza i bossa do obiektu Walka
-                            walkaZGoblinem.rozpocznijWalke(); // Rozpoczęcie walki
+
+                            // Tworzenie obiektu Boss
+                            Boss goblinKrzysio = new Boss("Goblin Krzysio", 100, 20, 10, 20);
+                            
+                            // Tworzenie obiektu Walka
+                            Walka walkaZGoblinem = new Walka(gracz, goblinKrzysio);
+                            
+                            // Rozpoczęcie walki
+                            walkaZGoblinem.rozpocznijWalke();
+                            
                             break;
 
 

@@ -1,4 +1,3 @@
-
 public class Boss extends Jednostka {
     private int punktAtaku;
     private int punktObrony;
@@ -25,5 +24,19 @@ public class Boss extends Jednostka {
     public int getSzczescie() {
         return szczescie;
     }
-}
 
+    @Override
+    public void atakuj(Jednostka przeciwnik) {
+    	if (czyUnik(przeciwnik.getSzczescie())) {
+    	    System.out.println("Boss unika ataku gracza!");
+    	} else {
+    	    int obrazenia = getPunktAtaku() - przeciwnik.getPunktObrony();
+    	    if (obrazenia > 0) {
+    	        przeciwnik.odejmijPunktyZycia(obrazenia);
+    	        System.out.println("Gracz zadaje " + obrazenia + " obrażeń bossowi.");
+    	    } else {
+    	        System.out.println("Gracz nie zadaje obrażeń bossowi.");
+    	    }
+    	}
+    }
+}
